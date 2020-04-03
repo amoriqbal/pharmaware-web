@@ -6,7 +6,7 @@ const Books=mongoose.model('books');
 
 module.exports=(app)=>{
 
-  app.post("/search",async (req,res)=>{
+  /*app.post("/search",async (req,res)=>{
     console.log("Search");
     console.log(req.body);
     var uselesslen='/search?search='.length;
@@ -16,7 +16,13 @@ module.exports=(app)=>{
     console.log(book);
     res.send(book||false);
     res.json(req.body);
-  });
+  });*/
+  app.post("/search",async (req,res)=>{
+    var search=req.body.search;
+    books=await Books.find({tags:search});
+    console.log(books);
+    res.json(books);
+  })
 
   app.get("/addtodb",(req,res)=>{
     new Books({name:"book2",type:"pdf",tags:["b","c"],download_link:"google.com"}).save();
