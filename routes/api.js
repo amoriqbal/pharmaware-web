@@ -7,7 +7,7 @@ const Composition=mongoose.model('composition');
 module.exports=(app)=>{
   app.post('/api/search', async (req,res)=>{
     console.log(req.body.search);
-    var sRes=await Composition.find({});
+      var sRes=await Composition.find({name:req.body.search});
     if(sRes){
       console.log(sRes);
       res.json(sRes);
@@ -17,9 +17,9 @@ module.exports=(app)=>{
     }
   });
 
-  app.post('/api/posttest',(req,res)=>{
+  /*app.post('/api/posttest',(req,res)=>{
     res.json(req.body);
-  });
+  });*/
 
   app.post('/api/add_compo', async (req,res)=>{
     var ncomp=await new Composition(req.body.composition).save().catch(err=>console.log(err.toString()));
