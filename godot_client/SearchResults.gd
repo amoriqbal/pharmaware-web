@@ -17,8 +17,9 @@ func _on_HTTPRequest_request_completed(result, response_code, headers, body):
 			while not results.empty():
 				var r=results.pop_front()
 				if r is Node:
+					self.remove_child(r.get_ref())
 					r.get_ref().queue_free();
-
+			#if not bodyParsed.result[0]==null:
 			for ele in bodyParsed.result[0].Products:
 				results.push_back(weakref(RowContainerScene.instance()))
 				#results.back().get_ref().text=JSON.print(ele)

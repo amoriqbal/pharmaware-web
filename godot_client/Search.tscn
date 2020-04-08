@@ -30,6 +30,9 @@ font_data = SubResource( 5 )
 [node name="root" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = 30.0
+margin_right = -30.0
+margin_bottom = -30.0
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -45,19 +48,19 @@ __meta__ = {
 }
 
 [node name="Top" type="VBoxContainer" parent="Main"]
-margin_right = 640.0
+margin_right = 580.0
 margin_bottom = 407.0
 custom_constants/separation = 20
 
 [node name="HeaderContainer" type="VBoxContainer" parent="Main/Top"]
-margin_right = 640.0
+margin_right = 580.0
 margin_bottom = 230.0
 rect_min_size = Vector2( 0, 230 )
 alignment = 2
 
 [node name="HeaderText" type="Label" parent="Main/Top/HeaderContainer"]
 margin_top = 66.0
-margin_right = 640.0
+margin_right = 580.0
 margin_bottom = 230.0
 rect_min_size = Vector2( 0, 100 )
 size_flags_vertical = 1
@@ -68,7 +71,7 @@ valign = 1
 
 [node name="SearchBoxContainer" type="MarginContainer" parent="Main/Top"]
 margin_top = 250.0
-margin_right = 640.0
+margin_right = 580.0
 margin_bottom = 330.0
 rect_min_size = Vector2( 0, 80 )
 custom_constants/margin_right = 40
@@ -78,7 +81,7 @@ custom_constants/margin_left = 40
 "SearchBox",
 ]]
 margin_left = 40.0
-margin_right = 600.0
+margin_right = 540.0
 margin_bottom = 80.0
 custom_fonts/font = SubResource( 4 )
 caret_blink = true
@@ -86,31 +89,35 @@ script = ExtResource( 2 )
 
 [node name="CenterContainer" type="CenterContainer" parent="Main/Top"]
 margin_top = 350.0
-margin_right = 640.0
+margin_right = 580.0
 margin_bottom = 407.0
 
 [node name="SearchButton" type="Button" parent="Main/Top/CenterContainer"]
-margin_left = 195.0
-margin_right = 445.0
+margin_left = 165.0
+margin_right = 415.0
 margin_bottom = 57.0
 rect_min_size = Vector2( 250, 50 )
 custom_fonts/font = SubResource( 6 )
 text = "Search"
 
-[node name="SearchResults" type="MarginContainer" parent="Main"]
+[node name="SearchResults" type="ScrollContainer" parent="Main"]
 margin_top = 447.0
-margin_right = 640.0
-margin_bottom = 1136.0
+margin_right = 580.0
+margin_bottom = 1106.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="SearchResults" type="VBoxContainer" parent="Main/SearchResults"]
 margin_right = 640.0
-margin_bottom = 689.0
+margin_bottom = 50.0
+size_flags_horizontal = 3
+size_flags_vertical = 2
+custom_constants/separation = 30
 script = ExtResource( 3 )
 RowContainerScene = ExtResource( 4 )
 
 [node name="HBoxContainer" parent="Main/SearchResults/SearchResults" instance=ExtResource( 4 )]
+margin_bottom = 50.0
 
 [node name="HTTPRequest" type="HTTPRequest" parent="."]
 [connection signal="pressed" from="Main/Top/CenterContainer/SearchButton" to="." method="_on_SearchButton_pressed"]
