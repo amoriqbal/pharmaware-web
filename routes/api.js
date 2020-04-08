@@ -21,7 +21,7 @@ module.exports=(app)=>{
     res.json(req.body);
   });*/
 
-  app.post('/api/add_compo', async (req,res)=>{
+  /*app.post('/api/add_compo', async (req,res)=>{
     var ncomp=await new Composition(req.body.composition).save().catch(err=>console.log(err.toString()));
     if(ncomp){
       console.log(ncomp);
@@ -29,5 +29,5 @@ module.exports=(app)=>{
     }else {
       res.json({status:500, composition:false});
     }
-  });
+  });*/
 };
