@@ -8,7 +8,8 @@
     "npm": "6.14.2"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
   },
   "author": "Amor and Sritom",
   "license": "ISC",
@@ -17,6 +18,7 @@
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
     "mongoose": "^5.9.7",
+    "node": "^13.12.0",
     "nodemon": "^2.0.2"
   }
 }
