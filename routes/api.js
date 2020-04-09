@@ -12,7 +12,7 @@ module.exports=(app)=>{
     var sRes=await Composition.find({name:{$regex: '.*'+req.body.search+'.*' ,$options:"six"}});
     if(sRes){
       console.log(sRes);
-      res.json(sRes);
+      res.send(sRes);
     }else {
       console.log("********************Error in fetching data from database**********************");
       res.json({err:"composition not found!"});
