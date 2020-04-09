@@ -24,5 +24,6 @@ app.get('/test',(req,res)=>res.send("Hello World"));
 app.get("/",(req,res)=>res.sendFile(__dirname+"/public/index.html"));
 require('./routes/home')(app);
 require('./routes/api')(app);
+
 //Start listening
 app.listen(port,()=>console.log("Backend listening"));
