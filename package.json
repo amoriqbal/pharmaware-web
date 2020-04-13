@@ -11,7 +11,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
     "dev": "concurrently \"npm start --prefix react-client\" \"node index.js\"",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix react-client && npm run build --prefix client"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix react-client && npm run build --prefix react-client"
   },
   "author": "Amor and Sritom",
   "license": "ISC",

@@ -19,7 +19,7 @@ const app=express();
 app.use(bodyParser.json());
 
 //routes
-app.use(express.static("public"));
+app.use(express.static("./react-client/public"));
 app.get('/test',(req,res)=>res.send("Hello World"));
 app.get("/",(req,res)=>res.sendFile(__dirname+"/public/index.html"));
 require('./routes/api')(app);
