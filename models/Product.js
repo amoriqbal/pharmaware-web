@@ -3,7 +3,7 @@ const mongoose=require ('mongoose');
 
 ProductSchema=new mongoose.Schema({
   name:String,
-  brand:String,
+  quantity:String,
   mrp:Number,
 });
 

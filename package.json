@@ -9,16 +9,20 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "start": "node index.js",
+    "dev": "concurrently \"npm start --prefix react-client\" \"node index.js\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix react-client && npm run build --prefix client"
   },
   "author": "Amor and Sritom",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.19.2",
     "body-parser": "^1.19.0",
+    "concurrently": "^5.1.0",
     "express": "^4.17.1",
     "mongoose": "^5.9.7",
     "node": "^13.12.0",
-    "nodemon": "^2.0.2"
+    "nodemon": "^2.0.2",
+    "semver": "^7.2.2"
   }
 }

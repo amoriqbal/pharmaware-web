@@ -22,7 +22,6 @@ app.use(bodyParser.json());
 app.use(express.static("public"));
 app.get('/test',(req,res)=>res.send("Hello World"));
 app.get("/",(req,res)=>res.sendFile(__dirname+"/public/index.html"));
-require('./routes/home')(app);
 require('./routes/api')(app);
 
 //Start listening
