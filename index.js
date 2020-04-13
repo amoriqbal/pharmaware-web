@@ -3,7 +3,7 @@
 const express=require('express');
 const axios=require('axios');
 const bodyParser=require('body-parser');
-
+const path=require("path");
 //mongodb
 require('./services/mongodb_util');
 require('./models/Books');
@@ -19,10 +19,13 @@ const app=express();
 app.use(bodyParser.json());
 
 //routes
-app.use(express.static("./react-client/public"));
+//app.use(express.static("./react-client/public"));
 app.get('/test',(req,res)=>res.send("Hello World"));
-app.get("/",(req,res)=>res.sendFile(__dirname+"/public/index.html"));
+//app.get("/",(req,res)=>res.sendFile(__dirname+"/public/index.html"));
 require('./routes/api')(app);
-
+app.get('*',(req,res)=>{
+    res.sendFile(path.resolve(__dirname,'react-client','build','index.html'));
+  }
+);
 //Start listening
 app.listen(port,()=>console.log("Backend listening"));
