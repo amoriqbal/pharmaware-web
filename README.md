@@ -1,4 +1,4 @@
-#Server Side Backend version 0.1.0
+#Pharmaware Server and Web Client
 
 Visit: https://pharmaware.herokuapp.com
 
