@@ -1,4 +1,14 @@
 #Server Side Backend version 0.1.0
+Visit: https://pharmaware.herokuapp.com
+About
+=====
+Server:
+------
+The server uses the Node.js runtime. The server is an express app. The data hosted by it is present in a database in Mongodb Atlas. It uses Mongoose as a middleware to integrate Node.js with Mongodb.
+
+Client:
+-------
+The client is a React application, using Material-ui framework for frontend design. It was created with ``creaate-react-app``. This part is still under development. But the main functionality is ready (searching for medicines with their composition names).
 
 Developer Instructions:
 ===================
