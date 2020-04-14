@@ -4,6 +4,9 @@ Visit: https://pharmaware.herokuapp.com
 
 About
 =====
+
+On this website, you can search for medicines, with their composition names.
+
 Server:
 ------
 The server uses the Node.js runtime. The server is an express app. The data hosted by it is present in a database in Mongodb Atlas. It uses Mongoose as a middleware to integrate Node.js with Mongodb.
