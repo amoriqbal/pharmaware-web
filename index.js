@@ -21,7 +21,6 @@ app.use(bodyParser.json());
 //routes
 app.use(express.static("./react-client/build"));
 app.get('/test',(req,res)=>res.send("Hello World"));
-//app.get("/",(req,res)=>res.sendFile(__dirname+"/public/index.html"));
 require('./routes/api')(app);
 app.get('*',(req,res)=>{
     res.sendFile(path.resolve(__dirname,'react-client','build','index.html'));
